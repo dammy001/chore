@@ -13,15 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::view('/', 'index');
 
-Auth::routes(['verify' => true]);
+/* Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->middleware('verified');
 
 Route::resource('users', 'UserController')->middleware('auth');
 
 
-Route::resource('posts', 'postController');
+Route::resource('posts', 'postController'); */
