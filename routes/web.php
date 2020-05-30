@@ -17,6 +17,6 @@ Route::view('/', 'index');
 Route::view('/show', 'show');
 
 Auth::routes(['verify' => true]);
-Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifytoken');
+Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifyemail');
 
  Route::get('/home', 'HomeController@index')->middleware('verified');
