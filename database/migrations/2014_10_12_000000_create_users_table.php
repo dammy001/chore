@@ -18,10 +18,16 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->boolean('isAdmin')->default(false);
             $table->string('password');
+            $table->tinyInteger('verified')->default(0);
+            $table->string('email_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
+
+        $this->Admin();
+
     }
 
     /**
@@ -32,5 +38,19 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::dropIfExists('users');
+    }
+
+    private function Admin()
+    {
+        $data = [
+            [
+                'name' => 'Damilare Anjorin',
+                'email' => 'damilareanjorin1@gmail.com',
+                'isAdmin' => 1,
+                'password' => bcrypt('damilareanjorin')
+            ]
+        ];
+
+        \Illuminate\Support\Facades\DB::table('users')->insert($data);
     }
 }

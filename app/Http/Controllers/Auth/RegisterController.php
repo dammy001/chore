@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Auth\Events\Registered;
 
 class RegisterController extends Controller
 {
@@ -68,6 +69,19 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'email_token' => base64_encode($data['email'])
         ]);
+    }
+
+    public function verify($token)
+    {
+        $user = User::where('email_token', $email_token)->first();
+
+        $user->update([
+            'verified' => 1
+        ]);
+
+        return view('confirm', ['user' => $user]);
+
     }
 }

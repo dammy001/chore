@@ -14,12 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index');
+Route::view('/show', 'show');
 
-/* Auth::routes(['verify' => true]);
+Auth::routes(['verify' => true]);
+Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifytoken');
 
-Route::get('/home', 'HomeController@index')->middleware('verified');
-
-Route::resource('users', 'UserController')->middleware('auth');
-
-
-Route::resource('posts', 'postController'); */
+ Route::get('/home', 'HomeController@index')->middleware('verified');

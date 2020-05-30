@@ -10,22 +10,22 @@
     </head>
     <body class="font-sans bg-gray-900 text-white">
         <nav class="border-b border-gray-700">
-            <div class="container mx-auto flex items-center justify-between px-6 py-6">
-                <ul class="flex items-center">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-6">
+                <ul class="flex items-center flex-col md:flex-row">
                     <li>
                         <a href="#" class="font-bold text-lg">Chore Movies</a>
                     </li>
-                    <li class="ml-16">
-                        <a href="#">Movies</a>
+                    <li class="md:ml-16">
+                        <a href="#" class="hover:text-orange-400">Movies</a>
                     </li>
-                    <li class="ml-6">
-                        <a href="#">Actors</a>
+                    <li class="md:ml-6">
+                        <a href="#" class="hover:text-orange-400">Actors</a>
                     </li>
-                    <li class="ml-6">
-                        <a href="#">TV Shows</a>
+                    <li class="md:ml-6">
+                        <a href="#" class="hover:text-orange-400">TV Shows</a>
                     </li>
                 </ul>
-                <div class="flex items-center">
+                <div class="flex items-center flex-col md:flex-row">
                     <div class="relative">
                         <input type="text" class="rounded-full bg-gray-700 w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search" />
                     </div>
@@ -33,16 +33,16 @@
                         <ul class="flex items-center">
                             @auth
                                 <li>
-                                    <a href="#">Logout</a>
+                                    <a href="#" class="hover:text-orange-400">Logout</a>
                                 </li>
                             @endauth
 
                             @guest
                                 <li>
-                                    <a href="#" class="hover:text-gray-400">Login</a>
+                                    <a href="{{route('login')}}" class="hover:text-orange-400">Login</a>
                                 </li>
                                 <li class="ml-6">
-                                    <a href="#" class="hover:text-gray-400">Register</a>
+                                    <a href="{{route('register')}}" class="hover:text-orange-400">Register</a>
                                 </li>
                             @endguest
 
