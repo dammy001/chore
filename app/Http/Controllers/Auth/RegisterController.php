@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Auth\Events\Registered;
+use App\Jobs\RegisterSuccessful;
 
 class RegisterController extends Controller
 {
@@ -79,6 +80,8 @@ class RegisterController extends Controller
 
         $user->verified = 1;
         $user->save();
+
+        dispatch(new RegisterSuccessful($user))->afterResponse();
 
         return view('confirm', ['user' => $user]);
 

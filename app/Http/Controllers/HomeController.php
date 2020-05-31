@@ -41,16 +41,18 @@ class HomeController extends Controller
         $response = Http::withToken(env('MOVIE_TOKEN'))
         ->get('https://api.themoviedb.org/3/movie/'.$movie_id.'?api_key=api_key='.env('API_KEY').'&language=en-US');
 
-        $response->successful() ? $data = $response->body() : null;
+        $response->successful() ? $data = $response->body() : $response->failed();
         $result = json_decode($data, true);
 
-        $image = Http::withToken(env('MOVIE_TOKEN'))
-        ->get('https://api.themoviedb.org/3/movie/'.$movie_id.'?api_key=api_key='.env('API_KEY').'&language=en-US');
+        $casts = Http::withToken(env('MOVIE_TOKEN'))
+        ->get('https://api.themoviedb.org/3/movie/'.$movie_id.'/credits?api_key='.env('API_KEY'));
 
-        $imageResult = $image->body();
+        $casts->successful() ? $cast = $casts->body() : $casts->failed();
+        $castResults = json_decode($cast, true);
 
         return view('show', [
-            'result' => $result
+            'result' => $result,
+            'casts' => $castResults
         ]);
     }
 }

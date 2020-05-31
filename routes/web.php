@@ -13,10 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'index');
+Route::get('/', 'HomeController@index');
 Route::get('/show/{movie_id}', 'HomeController@show')->name('show');
 
+Route::get('actor/{actor_id}', 'HomeController@actor')->name('actor');
+
 Auth::routes(['verify' => true]);
+
 Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifyemail');
 
  Route::get('/home', 'HomeController@index')->middleware('verified');
