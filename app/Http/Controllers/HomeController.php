@@ -24,15 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-       // $response = Http::withToken('token')->post(...);
-
         $response = Http::get('https://api.themoviedb.org/3/movie/popular?api_key='.env('API_KEY').'&language=en-US&page=1');
 
         $response->successful() ? $data = $response->body() : null;
         $result = json_decode($data, true);
 
+        $nowPlaying = $this->nowPlaying();
+
         return view('index', [
-            'results' => $result["results"]
+            'results' => $result["results"],
+            'now' => $nowPlaying['results']
         ]);
     }
 
@@ -54,5 +55,27 @@ class HomeController extends Controller
             'result' => $result,
             'casts' => $castResults
         ]);
+    }
+
+    public function topRated()
+    {
+        $response = Http::get('https://api.themoviedb.org/3/movie/top_rated?api_key='.env('API_KEY').'&language=en-US&page=1');
+
+        $response->successful() ? $data = $response->body() : $response->failed();
+        $result = json_decode($data, true);
+
+        return view('top-rated', [
+            'results' => $result['results']
+        ]);
+    }
+
+    protected function nowPlaying()
+    {
+        $response = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key='.env('API_KEY').'&language=en-US&page=1');
+
+        $response->successful() ? $data = $response->body() : $response->failed();
+        $result = json_decode($data, true);
+
+        return $result;
     }
 }

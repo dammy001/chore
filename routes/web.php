@@ -14,9 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@index');
+
 Route::get('/show/{movie_id}', 'HomeController@show')->name('show');
 
 Route::get('actor/{actor_id}', 'HomeController@actor')->name('actor');
+
+Route::get('top-rated', 'HomeController@topRated')->name('top-rated');
 
 Auth::routes(['verify' => true]);
 

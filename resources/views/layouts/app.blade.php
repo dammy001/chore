@@ -13,7 +13,7 @@
             <div class="container mx-auto flex flex-col md:flex-row items-center justify-between px-6 py-6">
                 <ul class="flex items-center flex-col md:flex-row">
                     <li>
-                        <a href="#" class="font-bold text-lg">Chore Movies</a>
+                        <a href="{{url('/')}}" class="font-bold text-lg">Chore Movies</a>
                     </li>
                     <li class="md:ml-16">
                         <a href="#" class="hover:text-orange-400">Movies</a>
@@ -22,7 +22,7 @@
                         <a href="#" class="hover:text-orange-400">Actors</a>
                     </li>
                     <li class="md:ml-6">
-                        <a href="#" class="hover:text-orange-400">TV Shows</a>
+                        <a href="{{route('top-rated')}}" class="hover:text-orange-400">Top Rated</a>
                     </li>
                 </ul>
                 <div class="flex items-center flex-col md:flex-row">
