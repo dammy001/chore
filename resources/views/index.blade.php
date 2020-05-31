@@ -5,12 +5,14 @@
         <div class="popular">
             <h2 class="uppercase tracking-wider text-orange-400 text-lg font-semibold">Popular Movies</div>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+
+                @foreach($results as $result)
                 <div class="mt-8">
                     <a href="#">
-                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
+                        <img src="{{$result['poster_path']}}" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
                     </a>
                     <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
+                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">{{$result['title']}}</a>
                         <div class="flex items-center text-gray-400 text-sm">
                             <span>star</span>
                             <span class="ml-1">50%</span>
@@ -22,83 +24,84 @@
                         </div>
                         @auth
                         <div class="mt-3">
-                            <button class="bg-orange-600 block hover:bg-gray-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                            <a href="{{route('show', $result['id'])}}"class="bg-orange-600 block hover:bg-gray-700 text-white font-bold w-full py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                 View Details
-                            </button>
+                            </a>
                         </div>
                         @endauth
-                        
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <span>star</span>
-                            <span class="ml-1">50%</span>
-                            <span class="mx-2">|</span>
-                            <span>May 29th, 2020</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                            Action, triller, comedy
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <span>star</span>
-                            <span class="ml-1">50%</span>
-                            <span class="mx-2">|</span>
-                            <span>May 29th, 2020</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                            Action, triller, comedy
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <span>star</span>
-                            <span class="ml-1">50%</span>
-                            <span class="mx-2">|</span>
-                            <span>May 29th, 2020</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                            Action, triller, comedy
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8">
-                    <a href="#">
-                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                    </a>
-                    <div class="mt-2">
-                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
-                        <div class="flex items-center text-gray-400 text-sm">
-                            <span>star</span>
-                            <span class="ml-1">50%</span>
-                            <span class="mx-2">|</span>
-                            <span>May 29th, 2020</span>
-                        </div>
-                        <div class="text-gray-400 text-sm">
-                            Action, triller, comedy
-                        </div>
-                    </div>
-                </div>
 
+                    </div>
+                </div>
+                @endforeach
+                {{-- <div class="mt-8">
+                    <a href="#">
+                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                    <div class="mt-2">
+                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <span>star</span>
+                            <span class="ml-1">50%</span>
+                            <span class="mx-2">|</span>
+                            <span>May 29th, 2020</span>
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            Action, triller, comedy
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="#">
+                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                    <div class="mt-2">
+                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <span>star</span>
+                            <span class="ml-1">50%</span>
+                            <span class="mx-2">|</span>
+                            <span>May 29th, 2020</span>
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            Action, triller, comedy
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="#">
+                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                    <div class="mt-2">
+                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <span>star</span>
+                            <span class="ml-1">50%</span>
+                            <span class="mx-2">|</span>
+                            <span>May 29th, 2020</span>
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            Action, triller, comedy
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <a href="#">
+                        <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
+                    </a>
+                    <div class="mt-2">
+                        <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">Extraction</a>
+                        <div class="flex items-center text-gray-400 text-sm">
+                            <span>star</span>
+                            <span class="ml-1">50%</span>
+                            <span class="mx-2">|</span>
+                            <span>May 29th, 2020</span>
+                        </div>
+                        <div class="text-gray-400 text-sm">
+                            Action, triller, comedy
+                        </div>
+                    </div>
+                </div>
+ --}}
             </div>
         </div>
 

@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::view('/', 'index');
-Route::view('/show', 'show');
+Route::get('/show/{movie_id}', 'HomeController@show')->name('show');
 
 Auth::routes(['verify' => true]);
 Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifyemail');
