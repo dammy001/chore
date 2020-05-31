@@ -77,10 +77,7 @@ class RegisterController extends Controller
     {
         $user = User::where('email_token', $token)->first();
 
-        $user->update([
-            'verified' => 1
-        ]);
-
+        $user->verified = 1;
         $user->save();
 
         return view('confirm', ['user' => $user]);

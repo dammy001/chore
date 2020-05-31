@@ -19,13 +19,22 @@
                 </p>
 
                 <div class="mt-12">
-                    <h4 class="text-white font-semibold">Featured Cast</div>
-                    <div class="mt-4">
+                    <h4 class="text-white font-semibold">Featured Cast</h4>
+                    <div class="flex mt-4">
                         <div>
                             <div>Damilare Anjorin</div>
-                            <div class="text-sm "
+                            <div class="text-sm text-gray-400">Producer, Director</div>
+                        </div>
+                        <div class="ml-8">
+                            <div>Damilare Anjorin</div>
+                            <div class="text-sm text-gray-400">Producer, Director</div>
                         </div>
                     </div>
+                </div>
+
+                <div class="mt-12">
+                    <button class="flex items-center bg-orange-500 text-gray-800 rounded font-semibold px-5 py-4 
+                    hover:bg-orange-700 transition ease-in-out duration-150">Play Triller</button>
                 </div>
             </div>
 

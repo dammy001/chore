@@ -1,24 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-7" style="margin-top: 2%">
-                <div class="box">
-                    <h3 class="box-title" style="padding: 2%">Verify Your Email Address</h3>
-
-                    <div class="box-body">
-                        @if (session('resent'))
-                            <div class="alert alert-success" role="alert">A fresh verification link has been sent to
-                                your email address
-                            </div>
-                        @endif
-                        <p>Before proceeding, please check your email for a verification link.If you did not receive
-                            the email,</p>
-                        <a href="{{ route('verification.resend') }}">click here to request another'</a>.
-                    </div>
-                </div>
+<div class="flex md:flex">
+    <div class="md:w-1/3"></div>
+    <div class="mt-24 w-full md:w-1/3 md:mt-24 md:ml-3">
+        <div class="bg-orange-100 border-t-4 border-orange-500 rounded-b text-teal-900 px-4 py-3 shadow-md" role="alert">
+            <div class="flex">
+              <div class="py-1"><svg class="fill-current h-6 w-6 text-teal-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+              <div>
+                <p class="font-bold">Verify Your Email</p>
+                <p class="text-sm">A fresh verification link has been sent toyour email address</p>
+              </div>
             </div>
-        </div>
+          </div>
     </div>
+    <div class="md:w-1/3"></div>
+</div>
 @endsection

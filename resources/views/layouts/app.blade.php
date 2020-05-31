@@ -33,7 +33,7 @@
                         <ul class="flex items-center">
                             @auth
                                 <li>
-                                    <a href="#" class="hover:text-orange-400">Logout</a>
+                                    <a href="{{route('logout')}}" class="hover:text-orange-400">Logout</a>
                                 </li>
                             @endauth
 
