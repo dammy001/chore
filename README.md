@@ -46,6 +46,12 @@ This is a Movie showcase built with Laravel and TailwindCSS. I hope this becomes
   php artisan migrate
   ```
 
+* Start Queue
+
+  ```bash
+  php artisan queue:work database
+  ```
+
 * Run application
 
   ```bash
