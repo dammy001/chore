@@ -25,12 +25,14 @@ Route::get('tv-shows', 'HomeController@tvShow')->name('tv-shows');
 
 Route::get('tv-show/{tv_id}', 'HomeController@tv')->name('tv-show');
 
+Route::get('tv-show/watch/{tv_id}', 'HomeController@watch')->name('watch-tv');
+
 Route::post('/search', 'HomeController@search')->name('search');
 
 Auth::routes(['verify' => true]);
 
 Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifyemail');
 
- Route::get('/home', 'HomeController@index')->middleware('verified');
+ Route::get('/home', 'HomeController@index');
 
  Route::get('logout', 'Auth\LoginController@logout')->name('logout');
