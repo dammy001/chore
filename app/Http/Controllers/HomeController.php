@@ -92,11 +92,11 @@ class HomeController extends Controller
         $response->successful() ? $data = $response->body() : null;
         $result = json_decode($data, true);
 
-        //$nowPlaying = $this->nowPlaying();
+        $popular = $this->popularTV();
 
         return view('tv-shows', [
             'results' => $result["results"],
-           // 'now' => $nowPlaying['results']
+            'popular' => $popular['results']
         ]);
     }
 
@@ -116,6 +116,16 @@ class HomeController extends Controller
     protected function nowPlaying()
     {
         $response = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key='.env('API_KEY').'&language=en-US&page=1');
+
+        $response->successful() ? $data = $response->body() : $response->failed();
+        $result = json_decode($data, true);
+
+        return $result;
+    }
+
+    protected function popularTV()
+    {
+        $response = Http::get('https://api.themoviedb.org/3/tv/popular?api_key='.env('API_KEY').'&language=en-US&page=1');
 
         $response->successful() ? $data = $response->body() : $response->failed();
         $result = json_decode($data, true);
