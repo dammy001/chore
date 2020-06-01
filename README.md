@@ -1,14 +1,14 @@
 # Chore Movies
 
-![hero](https://res.cloudinary.com/ichtrojan/image/upload/c_scale,w_1233/v1582069174/Screenshot_2020-02-18_at_00.59.01_hx9giw.png)
+![hero](https://res.cloudinary.com/djwluqv3m/image/upload/v1590980205/choremovies_ikae3r.png)
 
 ## Introduction
 
-This is a Fragrance showcase built with Go. We hope this becomes an inspiration to you; feel free to use components of this codebase in your future projects. We built this to make ourselves happy, We hope you're happy looking at this project right now and you're making other people happy. ❤️
+This is a Movie showcase built with Laravel and TailwindCSS. I hope this becomes an inspiration to you; feel free to use components of this codebase in your future projects. ❤️
 
 ## Requirements
 
-* [Go](https://golang.org) -  v1.11 above
+* [PHP](https://php.com) -  v7.4
 * [MySQL](https://mysql.com) - v5.7 above
 
 ## Installation
@@ -20,13 +20,13 @@ This is a Fragrance showcase built with Go. We hope this becomes an inspiration 
 * Clone this repo
 
   ```bash
-  git clone https://github.com/ichtrojan/fragrance.git
+  git clone https://github.com/dammy001/chore.git
   ```
 
 * Change directory to project directory
 
   ```bash
-  cd fragrance
+  cd chore
   ```
 
 * Copy `.env` template
@@ -36,45 +36,29 @@ This is a Fragrance showcase built with Go. We hope this becomes an inspiration 
   ```
 
 * Add correct database credentials to the `.env` file, credentials include:
-  - `PORT`: This is the port the application will be served on
   - `DB_HOST`: This is your database host name/IP address
-  - `DB_NAME`: This is the name of the database created for the application
   - `DB_NAME`: This is your database user
-  - `DB_PASS`: This is your database password if any, it should be left blank if no password is configured (localhost)
+  - `DATABASE_PASSWORD`: This is your database password if any, it should be left blank if no password is configured (localhost)
+
+* Migrate Database
+
+  ```bash
+  php artisan migrate
+  ```
 
 * Run application
 
   ```bash
-  go run main.go
+  php artisan serve
   ```
 
-  This will serve this application on the port you specified in the `.env` file.
+  This will serve this application on port 8000.
 
 ## Usage
 
 >**NOTE**</br>
-> #### Dashboard credentials </br>
-> **E-mail** - `cleopatra@gofragrance.xyz` </br>
-> **Password** - `iloveegypt`
+> #### Sign up </br>
+> **Name**</br>
+> **E-mail**</br>
+> **Password**
 
-|  Page Name	|  Description 	|  Route 	|   Screenshot	|
-|---	|---	|---	|---	|
-|  Homepage 🏚	|  This is the first page, it links to all other pages and contains a nice paragraph 	|  `/` 	|   ![homepage](https://res.cloudinary.com/ichtrojan/image/upload/v1582069174/c_scale,w_1233/Screenshot_2020-02-18_at_00.59.01_hx9giw.png)	|
-|   Categories ⛓	|   This page shows all the available fragrance Category, can be accessed by clicking the `Get Started` button on the homepage	|   `/categories`	|   ![categories](https://res.cloudinary.com/ichtrojan/image/upload/c_scale,w_1305/v1582069267/Screenshot_2020-02-18_at_01.01.29_cackyr.png)	|
-|  Scent 👗	|  This shows the available scent available in a Category, can be accessed by clicking on any of the available categories in the categories page 	|  `/{category}` 	|   ![category](https://res.cloudinary.com/ichtrojan/image/upload/v1582069150/Screenshot_2020-02-18_at_01.01.37_qclxlc.png)	|
-|   Bottle 🍶	|   This page shows the available bottle type available for a specified scent, it can be accessed by clicking on any of the scent available on the Scent page	|   `/{category}/{scent}`	|  ![bottle](https://res.cloudinary.com/ichtrojan/image/upload/v1582071428/Screenshot_2020-02-19_at_01.16.19_rrbdwj.png) 	|
-|  Checkout 💳	|  This page allows you to select the bottle size and quantity of you chosen fragrance based on your previous selection. It can be accessed by clicking on any of the available bottles shown in the Bottle page	|  `/{category}/{scent}/{bottle}/checkout` 	|   ![checkout](https://res.cloudinary.com/ichtrojan/image/upload/v1582069057/Screenshot_2020-02-18_at_01.01.47_lbquea.png)	|
-|   Dashboard Login	🔐|   We wanted to build a Dashboard but we didn't have the time to do so; so we made a functional Auth system	|   `/login`	|  ![login](https://res.cloudinary.com/ichtrojan/image/upload/v1582072615/Screenshot_2020-02-19_at_01.34.23_k3qauq.png) 	|
-|   Dashboard Home 🏡	|   The dashboard home is the page that comes up immediately you login; the only function available is the logout functionality... I wish we had time to do more 🤕	|  `/dashboard` 	|  ![dahboard](https://res.cloudinary.com/ichtrojan/image/upload/v1582072629/Screenshot_2020-02-19_at_01.34.35_be1wpj.png) 	|
-
-## Performance
-
-![Performance](https://res.cloudinary.com/ichtrojan/image/upload/v1582076107/Screenshot_2020-02-19_at_02.34.44_ch4bpu.png)
-
-## Contributors
-
-|   Contributor Name	| Role  	|  Tool 	| Language(s)  	|
-|---	|---	|---	|---	|
-|   [Ifeoluwasimi Olusola](https://twitter.com/o_ifeoluwasimi)	|  Designer 	|   [Adobe XD](https://www.adobe.com/products/xd.html)	|   ---	|
-|   [Muheez Jimoh](https://twitter.com/Kng_maaj)	|  Developer 	|   [VSCode](https://code.visualstudio.com)	|  HTML, CSS, JavaScript & Go 	|
-|  [Michael Trojan Okoh](https://twitter.com/ichtrojan) 	|   Developer	|   [Goland](https://www.jetbrains.com/go/)	|   HTML, CSS & Go	|
