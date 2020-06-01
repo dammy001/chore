@@ -57,8 +57,17 @@ This is a Movie showcase built with Laravel and TailwindCSS. I hope this becomes
 ## Usage
 
 >**NOTE**</br>
-> #### Sign up </br>
+> #### Sign up with -> </br>
 > **Name**</br>
 > **E-mail**</br>
 > **Password**
 
+|  Page Name	|  Description 	|  Route 	|   Screenshot	|
+|---	|---	|---	|---	|
+|  Homepage	|  This is the homepage, it links to all other pages 	|  `/` 	|   ![homepage](https://res.cloudinary.com/djwluqv3m/image/upload/v1590980205/choremovies_ikae3r.png)	|
+|   Login	|   This page shows the login form which allows you to login into the application	|   `/login`	|   ![login](https://res.cloudinary.com/djwluqv3m/image/upload/v1590981001/login_et1nad.png)	|
+|  Register	|  This page shows the register form which allows you login and fire login into the application	|  `/register` 	|   ![register](https://res.cloudinary.com/djwluqv3m/image/upload/v1590980991/register_opnohz.png)	|
+|   Movie Details 🍶	|   This page shows the movie details	|   `/show/{movie_id}`	|  ![details](https://res.cloudinary.com/djwluqv3m/image/upload/v1590981622/moviedetails_rkqtww.png) 	|
+|  Cast	|  This page allows you to view cast of selected movie	|  `/show/{movie_id}` 	|   ![cast](https://res.cloudinary.com/djwluqv3m/image/upload/v1590981634/cast_ekr0wq.png)	|
+|   Search  |   This allows you to search for movie or tv shows	|   `/search`	|  ![search](https://res.cloudinary.com/djwluqv3m/image/upload/v1590982244/search_o8j2x2.png) 	|
+|   TV Shows	|   This page shows you tv shows now airing or popular 	|  `/tv-shows` 	|  ![tvshows](https://res.cloudinary.com/djwluqv3m/image/upload/v1590982430/tvshows_eepqim.png) 	|
