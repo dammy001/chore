@@ -1,78 +1,80 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Chore Movies
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+![hero](https://res.cloudinary.com/ichtrojan/image/upload/c_scale,w_1233/v1582069174/Screenshot_2020-02-18_at_00.59.01_hx9giw.png)
 
-## About Laravel
+## Introduction
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This is a Fragrance showcase built with Go. We hope this becomes an inspiration to you; feel free to use components of this codebase in your future projects. We built this to make ourselves happy, We hope you're happy looking at this project right now and you're making other people happy. ❤️
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* [Go](https://golang.org) -  v1.11 above
+* [MySQL](https://mysql.com) - v5.7 above
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+>**NOTE**</br>
+> * Before the fourth step, you should have created a database for this application
+> * The supported database is MySQL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+* Clone this repo
 
-## Laravel Sponsors
+  ```bash
+  git clone https://github.com/ichtrojan/fragrance.git
+  ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+* Change directory to project directory
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+  ```bash
+  cd fragrance
+  ```
 
-## Contributing
+* Copy `.env` template
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+  ```bash
+  cp .env.example .env
+  ```
 
-## Code of Conduct
+* Add correct database credentials to the `.env` file, credentials include:
+  - `PORT`: This is the port the application will be served on
+  - `DB_HOST`: This is your database host name/IP address
+  - `DB_NAME`: This is the name of the database created for the application
+  - `DB_NAME`: This is your database user
+  - `DB_PASS`: This is your database password if any, it should be left blank if no password is configured (localhost)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+* Run application
 
-## Security Vulnerabilities
+  ```bash
+  go run main.go
+  ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  This will serve this application on the port you specified in the `.env` file.
 
-## License
+## Usage
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+>**NOTE**</br>
+> #### Dashboard credentials </br>
+> **E-mail** - `cleopatra@gofragrance.xyz` </br>
+> **Password** - `iloveegypt`
+
+|  Page Name	|  Description 	|  Route 	|   Screenshot	|
+|---	|---	|---	|---	|
+|  Homepage 🏚	|  This is the first page, it links to all other pages and contains a nice paragraph 	|  `/` 	|   ![homepage](https://res.cloudinary.com/ichtrojan/image/upload/v1582069174/c_scale,w_1233/Screenshot_2020-02-18_at_00.59.01_hx9giw.png)	|
+|   Categories ⛓	|   This page shows all the available fragrance Category, can be accessed by clicking the `Get Started` button on the homepage	|   `/categories`	|   ![categories](https://res.cloudinary.com/ichtrojan/image/upload/c_scale,w_1305/v1582069267/Screenshot_2020-02-18_at_01.01.29_cackyr.png)	|
+|  Scent 👗	|  This shows the available scent available in a Category, can be accessed by clicking on any of the available categories in the categories page 	|  `/{category}` 	|   ![category](https://res.cloudinary.com/ichtrojan/image/upload/v1582069150/Screenshot_2020-02-18_at_01.01.37_qclxlc.png)	|
+|   Bottle 🍶	|   This page shows the available bottle type available for a specified scent, it can be accessed by clicking on any of the scent available on the Scent page	|   `/{category}/{scent}`	|  ![bottle](https://res.cloudinary.com/ichtrojan/image/upload/v1582071428/Screenshot_2020-02-19_at_01.16.19_rrbdwj.png) 	|
+|  Checkout 💳	|  This page allows you to select the bottle size and quantity of you chosen fragrance based on your previous selection. It can be accessed by clicking on any of the available bottles shown in the Bottle page	|  `/{category}/{scent}/{bottle}/checkout` 	|   ![checkout](https://res.cloudinary.com/ichtrojan/image/upload/v1582069057/Screenshot_2020-02-18_at_01.01.47_lbquea.png)	|
+|   Dashboard Login	🔐|   We wanted to build a Dashboard but we didn't have the time to do so; so we made a functional Auth system	|   `/login`	|  ![login](https://res.cloudinary.com/ichtrojan/image/upload/v1582072615/Screenshot_2020-02-19_at_01.34.23_k3qauq.png) 	|
+|   Dashboard Home 🏡	|   The dashboard home is the page that comes up immediately you login; the only function available is the logout functionality... I wish we had time to do more 🤕	|  `/dashboard` 	|  ![dahboard](https://res.cloudinary.com/ichtrojan/image/upload/v1582072629/Screenshot_2020-02-19_at_01.34.35_be1wpj.png) 	|
+
+## Performance
+
+![Performance](https://res.cloudinary.com/ichtrojan/image/upload/v1582076107/Screenshot_2020-02-19_at_02.34.44_ch4bpu.png)
+
+## Contributors
+
+|   Contributor Name	| Role  	|  Tool 	| Language(s)  	|
+|---	|---	|---	|---	|
+|   [Ifeoluwasimi Olusola](https://twitter.com/o_ifeoluwasimi)	|  Designer 	|   [Adobe XD](https://www.adobe.com/products/xd.html)	|   ---	|
+|   [Muheez Jimoh](https://twitter.com/Kng_maaj)	|  Developer 	|   [VSCode](https://code.visualstudio.com)	|  HTML, CSS, JavaScript & Go 	|
+|  [Michael Trojan Okoh](https://twitter.com/ichtrojan) 	|   Developer	|   [Goland](https://www.jetbrains.com/go/)	|   HTML, CSS & Go	|

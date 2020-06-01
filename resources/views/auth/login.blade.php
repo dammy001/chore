@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex md:flex">
+<div class="flex mx-8 md:flex">
     <div class="md:w-1/3"></div>
     <div class="mt-24 w-full md:w-1/3 md:mt-24 md:ml-3">
         <form class="bg-gray-800 shadow-md rounded px-8 pt-8 pb-8 mb-4" method="POST" action="{{route('login')}}">
