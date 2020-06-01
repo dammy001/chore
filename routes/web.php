@@ -21,6 +21,12 @@ Route::get('actor/{actor_id}', 'HomeController@actor')->name('actor');
 
 Route::get('top-rated', 'HomeController@topRated')->name('top-rated');
 
+Route::get('tv-shows', 'HomeController@tvShow')->name('tv-shows');
+
+Route::get('tv-show/{tv_id}', 'HomeController@tv')->name('tv-show');
+
+Route::post('/search', 'HomeController@search')->name('search');
+
 Auth::routes(['verify' => true]);
 
 Route::get('verifyemail/{token}', 'Auth\RegisterController@verify')->name('verifyemail');

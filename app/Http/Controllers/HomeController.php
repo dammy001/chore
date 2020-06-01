@@ -69,6 +69,50 @@ class HomeController extends Controller
         ]);
     }
 
+    public function search(Request $request)
+    {
+        $movie = $request->movie;
+
+        $response = Http::withToken(env('MOVIE_TOKEN'))
+        ->get('https://api.themoviedb.org/3/search/movie?api_key=api_key='.env('API_KEY').'&language=en-US&query='.$movie.'&page=1&include_adult=false');
+
+        $response->successful() ? $data = $response->body() : $response->failed();
+        $result = json_decode($data, true);
+
+        return view('search-result', [
+            'results' => $result['results']
+        ]);
+
+    }
+
+    public function tvShow()
+    {
+        $response = Http::get('https://api.themoviedb.org/3/tv/airing_today?api_key='.env('API_KEY').'&language=en-US&page=1');
+
+        $response->successful() ? $data = $response->body() : null;
+        $result = json_decode($data, true);
+
+        //$nowPlaying = $this->nowPlaying();
+
+        return view('tv-shows', [
+            'results' => $result["results"],
+           // 'now' => $nowPlaying['results']
+        ]);
+    }
+
+    public function tv($tv_id)
+    {
+        $response = Http::withToken(env('MOVIE_TOKEN'))
+        ->get('https://api.themoviedb.org/3/tv/'.$tv_id.'?api_key=api_key='.env('API_KEY').'&language=en-US');
+
+        $response->successful() ? $data = $response->body() : $response->failed();
+        $result = json_decode($data, true);
+
+        return view('tv-show', [
+            'result' => $result,
+        ]);
+    }
+
     protected function nowPlaying()
     {
         $response = Http::get('https://api.themoviedb.org/3/movie/now_playing?api_key='.env('API_KEY').'&language=en-US&page=1');
@@ -78,4 +122,6 @@ class HomeController extends Controller
 
         return $result;
     }
+
+
 }

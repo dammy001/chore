@@ -19,7 +19,7 @@
                         <a href="#" class="hover:text-orange-400">Movies</a>
                     </li>
                     <li class="md:ml-6">
-                        <a href="#" class="hover:text-orange-400">Actors</a>
+                        <a href="{{route('tv-shows')}}" class="hover:text-orange-400">Tv Shows</a>
                     </li>
                     <li class="md:ml-6">
                         <a href="{{route('top-rated')}}" class="hover:text-orange-400">Top Rated</a>
@@ -27,7 +27,10 @@
                 </ul>
                 <div class="flex items-center flex-col md:flex-row">
                     <div class="relative">
-                        <input type="text" class="rounded-full bg-gray-700 w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search" />
+                        <form method="POST" action="{{route('search')}}">
+                            @csrf
+                            <input type="text" name="movie" class="rounded-full bg-gray-700 w-64 px-4 pl-8 py-1 focus:outline-none focus:shadow-outline" placeholder="Search" />
+                        </form>
                     </div>
                     <div class="ml-4">
                         <ul class="flex items-center">

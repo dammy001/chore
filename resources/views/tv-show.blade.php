@@ -5,7 +5,7 @@
         <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row">
             <img src="https://image.tmdb.org/t/p/original/{{$result['poster_path']}}" alt="movie" class="w-76 flex md:w-96 h-54">
             <div class="md:ml-24">
-                <h2 class="text-4xl font-semibold">{{$result['title']}}</h2>
+                <h2 class="text-4xl font-semibold">{{$result['name']}}</h2>
                 <div class="flex items-center text-gray-400 flex-wrap text-sm md:flex-row">
                     <span>
                         <svg for="i in 10" :key="i" viewBox="0 0 24 24" :class="i <= {{ $result['vote_average'] }} ? 'text-orange-500' : 'text-gray-500'" class="h-4 w-12 fill-current">
@@ -13,15 +13,25 @@
                         </svg>
                     </span>
                     <span class="mx-2">|</span>
+                    <span class="ml-1"><a href="{{$result['homepage']}}" class="text-orange-500 text-semibold"> {{$result['homepage']}}</a></span>
+                    <span class="mx-2">|</span>
                     <span class="ml-1">{{$result['status']}}</span>
                     <span class="mx-2">|</span>
-                    <span>{{$result['release_date']}}</span>
+                    <span>{{$result['first_air_date']}}</span>
                     <span class="mx-2">|</span>
                     <span>
                         @foreach ($result['genres'] as $item)
                             {{$item['name']}}
                         @endforeach
 
+                    </span>
+                    <span class="mx-2">|</span>
+                    <span>
+                       Episodes: {{$result['number_of_episodes'] }}
+                    </span>
+                    <span class="mx-2">|</span>
+                    <span>
+                       Seasons: {{$result['number_of_seasons'] }}
                     </span>
                 </div>
                 <p class="mt-8 text-gray-500">
@@ -38,7 +48,7 @@
 
         </div>
 
-        <div class="mt-4 mx-auto px-12">
+        {{-- <div class="mt-4 mx-auto px-12">
             <h4 class="text-white font-semibold">Featured Cast</h4>
             <div class="flex mt-4">
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
@@ -50,66 +60,7 @@
                 @endforeach
             </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 
-    <div class="cast border-b border-gray-600">
-        <div class="mx-auto px-24 py-16 items-center">
-            <h2 class="uppercase tracking-wider text-orange-400 text-lg font-semibold">Cast</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-                    @foreach($casts['cast'] as $cast)
-                        <div class="mt-8">
-                            <a href="#">
-                                <img src="https://image.tmdb.org/t/p/original/{{$cast['profile_path']}}" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                            </a>
-                            <div class="mt-2">
-                                <a href="#" class="text-lg mt-2 hover:text-orange-400 text-md">{{$cast['name']}}</a>
-                                <div class="flex items-center text-gray-400 text-sm">
-                                    <span>character: {{$cast['character']}}</span>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    @endforeach
-
-                </div>
-        </div>
-    </div>
-
-    <div class="cast border-b border-gray-600">
-        <div class="mx-auto px-12 md:px-20 py-16 items-center">
-            <h2 class="uppercase tracking-wider text-orange-400 text-lg font-semibold">Images</h2>
-                <div class="grid px-12 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <div class="mt-8">
-                        <a href="#">
-                            <img src="/img/movie.jpg" alt="extraction" class="h-74 hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="#">
-                            <img src="/img/movie.jpg" alt="extraction" class="h-74 hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="#">
-                            <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-
-                    </div>
-
-                    <div class="mt-8">
-                        <a href="#">
-                            <img src="/img/movie.jpg" alt="extraction" class="hover:opacity-75 transition ease-in-out duration-150">
-                        </a>
-
-                    </div>
-
-                </div>
-        </div>
-    </div>
 @endsection
